@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Bytewise Exams</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#FF5C47">
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+
+<div class="small"><div><div class="logo" style="margin:0 auto 18px;width:56px;height:56px;font-size:24px">&lt;/&gt;</div><h2>Please use a laptop or PC</h2><p style="color:var(--mu)">This exam only opens on a large screen. Switch to a computer to continue.</p></div></div>
+
+<div class="app">
+<header><div class="brand"><div class="logo">&lt;/&gt;</div>Bytewise Exams</div></header>
+
+<section class="v" id="home"><div class="hero"><div class="rv">
+<span class="chip">SECONDARY ONE · PROGRAMMING</span>
+<h1 style="margin:18px 0">Ready to show what you <em>know</em>?</h1>
+<p>Answer the questions, hit finish, and see your score with a clear explanation for every answer, instantly.</p>
+<div class="feats"><span class="feat f1"><i>✓</i>Instant score</span><span class="feat f2"><i>✓</i>Clear explanations</span><span class="feat f3"><i>✓</i>Focus mode</span></div>
+<div><div class="win"><div class="dots"><i></i><i></i><i></i></div><pre><span class="ln l1"><b class="k">for</b> question <b class="k">in</b> exam:</span><span class="ln l2">    answer = <b class="s">think</b>()</span><span class="ln l3">    score += <b class="n">1</b></span></pre></div></div></div>
+<div class="card"><h2 style="font-size:26px">Start your exam</h2><label for="ex" style="color:var(--mu);font-weight:600;display:block;margin-top:14px">Exam</label><select id="ex"></select><label for="nm" style="color:var(--mu);font-weight:600;display:block;margin-top:14px">Your full name</label>
+<input id="nm" placeholder="Type your name" autocomplete="off">
+<button class="btn" id="go" disabled style="width:100%">Start exam →</button>
+<ul class="rules"><li id="nq"></li><li>Stay on this tab the whole time</li><li>Leaving 3 times submits your exam automatically</li></ul></div></div>
+<div class="how"><h2>How it works</h2><div class="steps">
+<div class="step reveal"><span>1</span><h3>Enter your name</h3><p>Pick your exam and type your full name to begin.</p></div>
+<div class="step reveal"><span>2</span><h3>Answer the questions</h3><p>One question at a time. Go back and change an answer before you finish.</p></div>
+<div class="step reveal"><span>3</span><h3>See your result</h3><p>Your score and an explanation for every answer appear instantly.</p></div>
+</div></div></section>
+
+<section class="v" id="exam"><div class="exam"><aside class="side card"><div class="who"><div class="av" id="av"></div><div><b id="sn"></b><small id="se"></small></div></div><div class="tmr"><span>Time</span><b id="tk">00:00</b></div><div class="nav" id="nav"></div><p class="leg"><span><i class="d1"></i>Answered</span><span><i class="d2"></i>Current</span></p></aside>
+<div class="q"><div class="top"><span id="cnt"></span><span class="lv" id="lv"></span></div><div class="bar"><i id="pb"></i></div><div class="card" id="qc"></div></div></div></section>
+
+<section class="v" id="result"><div class="res"><div class="card" style="text-align:center"><div class="ring"><svg width="240" height="240" viewBox="0 0 240 240"><circle cx="120" cy="120" r="100" stroke="var(--ln)"/><circle id="rg" cx="120" cy="120" r="100" stroke="var(--te)" stroke-dasharray="628.3" stroke-dashoffset="628.3" style="transition:stroke-dashoffset 1.4s cubic-bezier(.2,.8,.2,1)"/></svg><div class="t"><b id="sc"></b><span id="pc" style="color:var(--mu);font-weight:600"></span></div></div><h2 id="msg" style="font-size:24px"></h2><p id="sv" style="color:var(--mu);font-size:15px"></p></div>
+<div id="rv"></div></div></section>
+
+<section class="v" id="teacher"><h1 style="font-size:40px;margin-bottom:6px">Teacher area</h1><p id="tm" class="mu"></p>
+<div id="gate" class="card tcard" style="display:none;max-width:460px"><h2 id="gt" style="font-size:24px"></h2><p id="gm" class="mu"></p><input type="password" id="gp" placeholder="Password" autocomplete="off"><button class="btn" id="gb"></button><p id="ge" class="bad"></p></div>
+<div id="tbox">
+<div class="card tcard"><h2 style="font-size:24px">Upload an exam (PDF)</h2><p class="mu">Upload a PDF with your questions, answers and explanations. It turns into an online exam your student can pick right away.</p>
+<input type="file" id="pf" accept="application/pdf,.pdf"><div id="pvw"></div>
+<details><summary>How should the PDF look?</summary><pre>Exam: Exam 2 - Loops and Conditions
+
+Q1. What does a loop do?
+Code:
+for i in range(3):
+    print(i)
+A) Repeats code
+B) Stops the program
+C) Draws a shape
+D) Deletes a file
+Answer: A
+Explanation: A loop repeats the same block of code.
+
+Q2. Next question...</pre><p>Up to 15 questions. 2 to 4 options each (A to D). "Code:" is optional. The PDF must contain real text, not a scanned photo.</p></details></div>
+<div class="card tcard"><h2 style="font-size:24px">Published exams</h2><div id="exl"></div></div>
+<h2 style="font-size:28px;margin:10px 0">Student results</h2>
+<div class="stats"><div class="stat c1"><small>Attempts</small><b id="s1">0</b></div><div class="stat c2"><small>Average score</small><b id="s2">–</b></div><div class="stat c3"><small>Tab leaves</small><b id="s3">0</b></div></div>
+<div class="tw"><table><thead><tr><th>Student</th><th>Exam</th><th>Score</th><th>Tab leaves</th><th>Time</th><th>Date</th></tr></thead><tbody id="tb"></tbody></table></div></div></section>
+<footer>Bytewise Exams · Programming for Secondary One</footer>
+</div>
+
+<div class="warn" id="warn"><div class="card"><h2 style="color:var(--co)">Stay on the exam tab</h2><p>You left the exam. This has been recorded: <b id="wn"></b> of 3. At 3 the exam is submitted.</p><button class="btn" onclick="document.getElementById('warn').classList.remove('on')">Back to exam</button></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/pdf-import.js"></script>
+<script src="js/app.js"></script>
+<script src="js/teacher.js"></script>
+<script src="js/main.js"></script>
+</body></html>
